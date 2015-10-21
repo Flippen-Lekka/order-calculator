@@ -1,0 +1,187 @@
+/*
+ * Package:       Flippen Lekka order calculator
+ * Date:          Sat Jun 06 2015
+ * Author:        Louis Cabano <www.louiscabano.com>
+ * Description:
+ *
+ */
+
+body {
+    background-color: #fff;
+}
+
+body {
+    padding-top: 70px;
+}
+
+h4 {
+    margin-bottom: 20px
+}
+
+.blue-header {
+    background: #3498db;
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3498db), color-stop(100%, #3acffc));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #3498db 0%, #3acffc 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#3498db', endColorstr='#3acffc', GradientType=0);
+    /* IE6-9 */
+}
+/*
+Navbar Styling
+*/
+
+.navbar-brand {
+    font-family: 'open sans', sans-serif !important;
+    font-size: 28px;
+    font-weight: 200;
+}
+
+.inLetters {
+    color: #069452
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #069452;
+    background-color: #F8F8F8;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #069452;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    border-bottom-color: rgb(51, 51, 51);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-top-color: rgb(231, 231, 231);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: solid;
+    border-top-width: 0px;
+    box-shadow: rgb(181, 181, 181) 0px 0px 3px 0px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.main-nav {
+    margin-top: 1px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    border-top: 2px solid #069452
+}
+/*Section 1 styling*/
+
+.intro h2:after {
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    width: 70px;
+    content: " ";
+    margin-left: -35px;
+    position: absolute;
+    background: #069452;
+}
+
+.intro {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    color: #444;
+    font-size: 28rem;
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 6px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2.intro {
+    text-transform: uppercase;
+}
+
+.intro > p {
+    font-size: 15px;
+    font-weight: 200;
+    font-family: sans-serif;
+}
+
+.iNetfooter {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    color: #767676;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.bg {
+    background: url('http://localhost/inservnet/img/img3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    padding: 100px 0;
+    position: relative;
+}
+
+.bg2 {
+    background: url('http://localhost/inservnet/img/img1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    padding: 100px 0;
+    position: relative;
+}
+/*Order form styling*/
+
+.product-heading {
+    width: 100px;
+    height: 100px;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+span.green-circle {
+    background: #069452;
+}
+
+span.red-circle {
+    background: #e8252c;
+}
+
+span.orange-circle {
+    background: #dd6e00;
+}
+
+span.yellow-circle {
+    background: #ddbb00;
+}
+
+.settings a {
+    margin-bottom: 10px;
+}
