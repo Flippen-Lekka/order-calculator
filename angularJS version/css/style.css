@@ -1,0 +1,359 @@
+/*
+ * Package:       Flippen Lekka order calculator
+ * Date:          Sat Jun 06 2015
+ * Author:        Louis Cabano <www.louiscabano.com>
+ * Description:
+ *
+ */
+
+body {
+    background-color: #fff;
+}
+
+body {
+    padding-top: 70px;
+}
+
+h4 {
+    margin-bottom: 20px
+}
+
+.blue-header {
+    background: #3498db;
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3498db), color-stop(100%, #3acffc));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #3498db 0%, #3acffc 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #3498db 0%, #3acffc 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#3498db', endColorstr='#3acffc', GradientType=0);
+    /* IE6-9 */
+}
+/*
+Navbar Styling
+*/
+
+.navbar-brand {
+    font-family: 'open sans', sans-serif !important;
+    font-size: 28px;
+    font-weight: 200;
+}
+
+.inLetters {
+    color: #069452
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #069452;
+    background-color: #F8F8F8;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #069452;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    border-bottom-color: rgb(51, 51, 51);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-top-color: rgb(231, 231, 231);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: solid;
+    border-top-width: 0px;
+    box-shadow: rgb(181, 181, 181) 0px 0px 3px 0px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.main-nav {
+    margin-top: 1px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    border-top: 2px solid #069452
+}
+/*Section 1 styling*/
+
+.intro h2:after {
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    width: 70px;
+    content: " ";
+    margin-left: -35px;
+    position: absolute;
+    background: #069452;
+}
+
+.intro {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    color: #444;
+    font-size: 28rem;
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 6px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2.intro {
+    text-transform: uppercase;
+}
+
+.intro > p {
+    font-size: 15px;
+    font-weight: 200;
+    font-family: sans-serif;
+}
+
+.iNetfooter {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 35px;
+    color: #767676;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.bg {
+    background: url('http://localhost/inservnet/img/img3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    padding: 100px 0;
+    position: relative;
+}
+
+.bg2 {
+    background: url('http://localhost/inservnet/img/img1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    padding: 100px 0;
+    position: relative;
+}
+/*Order form styling*/
+
+.product-heading {
+    width: 100px;
+    height: 100px;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.list-group-item {
+    padding: 10px 8px;
+}
+
+span.green-circle {
+    background: #069452;
+}
+
+span.red-circle {
+    background: #e8252c;
+}
+
+span.orange-circle {
+    background: #dd6e00;
+}
+
+span.yellow-circle {
+    background: #ddbb00;
+}
+
+.settings a {
+    margin-bottom: 10px;
+}
+
+.glyphiconblack {
+    color: black
+}
+
+.left-border-red {
+    margin-bottom: 3px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    border-left-color: #e8252c;
+}
+
+.left-border-green {
+    margin-bottom: 3px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    border-left-color: #069452;
+}
+
+.left-border-orange {
+    margin-bottom: 3px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    border-left-color: #dd6e00;
+}
+
+.left-border-yellow {
+    margin-bottom: 3px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    border-left-color: #ddbb00;
+}
+
+.top-border-blue {
+    border: 1px solid #eee;
+    border-top-width: 5px;
+    border-radius: 3px;
+    border-top-color: #337ab7;
+    background-color: #efefef;
+    font-family: tahoma;
+}
+
+.mainresult-small {
+    font-size: 14;
+    font-weight: bold;
+}
+
+.greypanel {
+    background-color: #fbfcff;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #069452;
+    border-color: #069452;
+}
+
+.panel-primary {
+    border-color: #069452;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #069452;
+    border-color: #069452;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
+    color: #000;
+    background-color: #D0D0D0;
+    border-color: #D0D0D0;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active,
+.open>.dropdown-toggle.btn-success {
+    color: #FFF;
+    background-color: #06522F;
+    border-color: #06522F;
+}
+
+button,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: thin dotted;
+    outline: none;
+}
+
+.label-margin {
+    margin-top: 7px;
+    padding: 0;
+}
+
+.results {
+    margin-top: 25px;
+}
+
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        width: 650px;
+    }
+    .modal-body .text-center {
+        margin-left: 67px;
+    }
+}
+
+.modal-body {
+    padding: 5px 20px;
+}
+
+.settings {
+    height: 160px;
+    padding: 42px;
+    border: 3px solid #069452;
+    border-radius: 50%;
+    width: 170px;
+    margin: 0 auto;
+}
+
+.btn-block {
+    width: 113px !important;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn {
+    padding: 6px 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.modal-body .form-group {
+    margin-bottom: 5px;
+}
+
+.panel {
+    border: 3px solid rgb(251, 252, 255);
+}
+
+.panel-heading {
+    border-radius: 0;
+}
+
+.modal-body span.product-heading {
+    background: #777777;
+}
