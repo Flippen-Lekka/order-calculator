@@ -348,6 +348,7 @@ button,
 
 .panel {
     border: 3px solid rgb(251, 252, 255);
+    background-color: #FBFCFF;
 }
 
 .panel-heading {
@@ -356,4 +357,21 @@ button,
 
 .modal-body span.product-heading {
     background: #777777;
+}
+.alert-danger {
+    float: left;
+    height: 34px;
+    padding: 6px 10px;
+}
+hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.col-sm-2 {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+.badge {
+    font-size: 11px;
 }
