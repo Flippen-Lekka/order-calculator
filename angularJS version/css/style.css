@@ -375,3 +375,14 @@ hr {
 .badge {
     font-size: 11px;
 }
+@media screen and (min-width: 1200px) {
+.container {
+    width: 1200px;
+}
+}
+
+.col-sm-4 {
+        padding-left: 10px;
+    padding-right: 10px;
+
+}

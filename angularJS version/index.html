@@ -1,54 +1,9 @@
-<!-- # Package:       Flippen Lekka order calculator
+<!-- # Package:   Flippen Lekka order calculator
  # Date:          Sat Jun 06 2015
  # Author:        Louis Cabano <www.louiscabano.com>
  # Description:
-
-
-/*Product creator class*/
-
-class Product {
-     function Product($price, $shipW, $spiceW, $cost ) {
-         $this->price = $price ;
-         $this->shipW = $shipW ;
-         $this->spiceW = $spiceW ;
-         $this->cost = $cost ;
-     }
-}
-
-/*Flippen Lekka Spice*/
-
-$fls_100 = new Product(11, 0.125, 0.095, 6);
-$fls_200 = new Product(18, 0.215, 0.180, 6);
-$fls_500g = new Product(45, 0.510, 0.500, 6);
-$fls_750g = new Product(60, 0.760, 0.750, 6);
-$fls_1kg = new Product(80, 0.125, 0.095, 6);
-$fls_1kgTub = new Product(85, 0.125, 0.095, 6);
-
-/*Flippen Lekka Spice Hot*/
-
-$flsH_100 = new Product(11, 0.125, 0.095, 6);
-$flsH_200 = new Product(18, 0.215, 0.180, 6);
-$flsH_500g = new Product(45, 0.510, 0.500, 6);
-$flsH_750g = new Product(60, 0.760, 0.750, 6);
-$flsH_1kg = new Product(80, 0.125, 0.095, 6);
-$flsH_1kgTub = new Product(85, 0.125, 0.095, 6);
-
-/*Flippen Lekka Worcester Sauce spice*/
-
-$flWs_100 = new Product(11, 0.125, 0.095, 6);
-$flWs_200 = new Product(18, 0.215, 0.180, 6);
-$flWs_500g = new Product(45, 0.510, 0.500, 6);
-$flWs_750g = new Product(60, 0.760, 0.750, 6);
-$flWs_1kg = new Product(80, 0.125, 0.095, 6);
-$flWs_1kgTub = new Product(85, 0.125, 0.095, 6);
-
-/*Flippen Lekka Curry Mix*/
-
-$flCm_250ml = new Product(18, 0.215, 0.180, 6);
-$flCm_500g = new Product(45, 0.510, 0.500, 6);
-$flCm_1kg = new Product(80, 0.125, 0.095, 6);
-
 -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +12,7 @@ $flCm_1kg = new Product(80, 0.125, 0.095, 6);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>InservNet</title>
+    <title>Flippen Lekka Order Calculator</title>
 
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
@@ -113,22 +68,22 @@ $flCm_1kg = new Product(80, 0.125, 0.095, 6);
                         <h4 class="text-center"><span class="product-heading green-circle">Flippen Lekka Spice Original</span></h4>
 
                         <div class="form-group">
-                            <input type="number" name="100ml" class="form-control" placeholder="100ml">
+                            <input type="number" ng-model="x100ml" name="100ml" class="form-control" placeholder="100ml">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="200ml" class="form-control" placeholder="200ml">
+                            <input type="number" ng-model="x200ml" name="200ml" class="form-control" placeholder="200ml">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="500g" class="form-control" placeholder="500g">
+                            <input type="number" ng-model="x500g" name="500g" class="form-control" placeholder="500g">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="750g" class="form-control" placeholder="750g">
+                            <input type="number" ng-model="x750g" name="750g" class="form-control" placeholder="750g">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="1kg" class="form-control" placeholder="1kg Bag">
+                            <input type="number" ng-model="x1kgV" name="1kg" class="form-control" placeholder="1kg Bag">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="1kgTub" class="form-control" placeholder="1kg Tub">
+                            <input type="number" ng-model="x1kgT" name="1kgTub" class="form-control" placeholder="1kg Tub">
                         </div>
 
 
@@ -201,20 +156,362 @@ $flCm_1kg = new Product(80, 0.125, 0.095, 6);
                         </div>
                         <div class="settings">
                             <div class="row text-center">
-                                <button type="button" class="btn btn-default btn-block center-block" data-toggle="modal" data-target="#pricingModal">
+
+                                <button ng-hide="orderContents" type="button" class="btn btn-default btn-block center-block" data-toggle="modal" data-target="#pricingModal">
                                     Change pricing &raquo;
                                 </button>
-                                <button type="button" id="calculate" ng-click="calculate()" class="btn btn-success btn-block center-block" style="" name="submit">Calculate &raquo;</button>
+                                <button ng-hide="orderContents" type="button" id="calculate" ng-click="calculate()" class="btn btn-success btn-block center-block" style="" name="submit">Calculate &raquo;</button>
+                                                        <button disabled style=" margin-top:4px;" type="button" class="btn btn-default btn-xs center-block"  ng-if="orderContents" ng-click="restart()">
+                                    Print / Save
+                                </button>
+
+                                <button style=" margin-top:4px;" type="button" class="btn btn-danger btn-xs center-block"  ng-if="orderContents" ng-click="restart()">
+                                    Restart
+                                </button>
                             </div>
                         </div>
+
                     </div>
 
 
                 </form>
             </div>
-            <!-- Modal -->
 
-  <div ng-controller="PriceCtrl" class="modal fade" id="pricingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+
+    </section>
+
+    <!-- Section 2 - Results -->
+
+    <section class="results" ng-controller="CalculatorCtrl">
+        <div class="container" ng-if="orderContents">
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Order Summary - {{pricingType}}</h2>
+
+                    </div>
+                    <div class="panel-body greypanel">
+                        <div class="row">
+                            <!--------------Column 1-----------Original Results---------------->
+                            <div class="col-sm-2">
+                                <ul class="list-group">
+
+                                    <li ng-if="total100mlx" class="list-group-item left-border-green">
+                                        <span class="badge">Qty: {{total100ml}} </span>
+                                        <h5><strong>100ml PET</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R {{total100mlPrice}}</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total100mlDry | number:2}} Kg</strong>
+                                        </p>
+                                    </li>
+
+                                    <li ng-if="total200mlx" class="list-group-item left-border-green">
+                                        <span class="badge">Qty: {{total200ml}} </span>
+                                        <h5><strong>200ml PET</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R {{total200mlPrice}}</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total200mlDry | number:2}} Kg</strong>
+                                        </p>
+                                    </li>
+
+                                    <li ng-if="total500gx" class="list-group-item left-border-green">
+                                        <span class="badge">Qty: {{total500g}} </span>
+                                        <h5><strong>500g Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : {{total500gPrice}}</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total500gDry | number:2}} Kg</strong>
+                                        </p>
+                                    </li>
+
+                                    <li ng-if="total750gx" class="list-group-item left-border-green">
+                                        <span class="badge">Qty: {{total750g}} </span>
+                                        <h5><strong>750g Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R {{total750gPrice}}</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total750gDry | number:2}} Kg</strong>
+                                        </p>
+                                    </li>
+
+                                    <li ng-if="total1kgVx" class="list-group-item left-border-green">
+                                        <span class="badge">Qty: {{total1kgV}} </span>
+                                        <h5><strong>1Kg Vacuum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R {{total1kgVPrice}}</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total1kgVDry | number:2}} Kg</strong>
+                                        </p>
+                                    </li>
+
+                                    <li ng-if="total1kgTx" class="list-group-item left-border-green">
+                                        <span class="badge">Qty: {{total1kgT}} </span>
+                                        <h5><strong>1Kg Tub</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R {{total1kgTPrice}}</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total1kgTDry | number:2}} Kg</strong>
+                                        </p>
+                                    </li>
+                                    <!---------------End of list--------------->
+                                </ul>
+                                <!---------------End of Column 1------------->
+                            </div>
+                            <!--------------Column 2-----------HOT Results---------------->
+                            <div class="col-sm-2">
+                                <ul class="list-group">
+
+                                    <!---------------Order Calculation---------------100ml Hot---------->
+                                    <li class="list-group-item left-border-red">
+                                        <span class="badge">Qty: 50 </span>
+                                        <h5><strong>100ml Hot PET</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 500.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 6.25 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-red">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>200ml Hot PET</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 85.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 1.075 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-red">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>500g Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 225.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 2.55 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-red">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-red">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-red">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <!---------------End of list--------------->
+                                </ul>
+                                <!---------------End of Column 2------------->
+                            </div>
+                            <!--------------Column 3-----------WS Results---------------->
+                            <div class="col-sm-2">
+                                <ul class="list-group">
+
+                                    <!---------------Order Calculation---------------100ml Hot---------->
+                                    <li class="list-group-item left-border-orange">
+                                        <span class="badge">Qty: 50 </span>
+                                        <h5><strong>100ml Hot </strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 500.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 6.25 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-orange">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>200ml Hot </strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 85.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 1.075 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-orange">
+                                        <span class="badge">Qty: 50 </span>
+                                        <h5><strong>500g Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 225.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 2.55 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-orange">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
+                                        </p>
+                                    </li>
+                                     <li class="list-group-item left-border-orange">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-orange">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <!---------------End of list--------------->
+                                </ul>
+                                <!---------------End of Column 3------------->
+                            </div>
+                            <!--------------Column 4-----------Curry Results---------------->
+                            <div class="col-sm-2">
+                                <ul class="list-group">
+
+                                    <!---------------Order Calculation---------------250ml Curry mix---------->
+                                    <li class="list-group-item left-border-yellow">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>750g Tub</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 290.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 4 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-yellow">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>750g Tub</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 290.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 4 Kg</strong>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item left-border-yellow">
+                                        <span class="badge">Qty: 5 </span>
+                                        <h5><strong>750g Tub</strong></h5>
+                                        <p style="margin-bottom:0px" class="text-success">
+                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 290.00</strong>
+                                        </p>
+                                        <p style="margin-bottom:0px" class="text-warning">
+                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 4 Kg</strong>
+                                        </p>
+                                    </li>
+
+                                    <!---------------End of list--------------->
+                                </ul>
+                                <!---------------End of Column 4------------->
+                            </div>
+                            <!--------------Column 5-----------Master Results---------------->
+                            <div class="col-sm-4">
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-2">
+                <br>
+                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-shopping-cart " aria-hidden="true"></span> </div>
+            <div class="col-sm-4">
+                <div id="div-content">
+                    <h4 style="margin-top: 21px;"><strong>Total Value</strong></h4>
+                    <p class="text-success" style="font-size:19px"><strong>R {{orderValue | number:2}}</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <br>
+                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </div>
+            <div class="col-sm-4">
+                <div id="div-content">
+                    <h4 style="margin-top: 21px;"><strong>Weight</strong></h4>
+                    <p class="text-danger" style="font-size:19px"><strong>{{totalWeight | number:2}} Kg</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <br>
+                <div class="text-center">
+                    <span style="font-size:20px ; margin:0 auto;" class="glyphicon glyphicon-tasks " aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <h4 style="margin-top: 21px;" ><strong>Stock Required</strong></h4>
+                <div id="div-content">
+                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice</strong></h5>
+                    <p class="text-warning mainresult-small">{{flsStock | number:2}} Kg</p>
+                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice Hot</strong></h5>
+                    <p class="text-warning mainresult-small">{{flsHStock | number:2}} Kg</p>
+                    <h5 style="margin-bottom: 0px;"><strong>Worcester Sauce Spice</strong></h5>
+                    <p class="text-warning mainresult-small">{{wsStock | number:2}} Kg</p>
+                    <h5 style="margin-bottom: 0px;"><strong>Curry Mix</strong></h5>
+                    <p class="text-warning mainresult-small">{{cmStock | number:2}} Kg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+                                <!---------------End of ROW-------------->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+
+    <div ng-controller="PriceCtrl" class="modal fade" id="pricingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -445,331 +742,6 @@ $flCm_1kg = new Product(80, 0.125, 0.095, 6);
         </div>
     </div>
 </div>
-
-</div>
-
-    </section>
-
-    <!-- Section 2 - Results -->
-
-    <section class="results" ng-controller="ResultsCtrl">
-        <div class="container" ng-if="orderValue">
-            <div class="row">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">Order Summary</h2>
-                    </div>
-                    <div class="panel-body greypanel">
-                        <div class="row">
-                            <!--------------Column 1-----------Original Results---------------->
-                            <div class="col-sm-2">
-                                <ul class="list-group">
-                                    <li class="list-group-item left-border-green">
-                                        <span class="badge">Qty: 122 </span>
-                                        <h5><strong>100ml </strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 1220.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 15.25 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-green">
-                                        <span class="badge">Qty: 50 </span>
-                                        <h5><strong>200ml </strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 850.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 10.75 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-green">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>500g Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 225.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 2.55 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-green">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-green">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Tub</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.3 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-green">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Tub</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.3 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <!---------------End of list--------------->
-                                </ul>
-                                <!---------------End of Column 1------------->
-                            </div>
-                            <!--------------Column 2-----------HOT Results---------------->
-                            <div class="col-sm-2">
-                                <ul class="list-group">
-
-                                    <!---------------Order Calculation---------------100ml Hot---------->
-                                    <li class="list-group-item left-border-red">
-                                        <span class="badge">Qty: 50 </span>
-                                        <h5><strong>100ml Hot </strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 500.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 6.25 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-red">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>200ml Hot </strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 85.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 1.075 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-red">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>500g Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 225.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 2.55 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-red">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-red">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-red">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <!---------------End of list--------------->
-                                </ul>
-                                <!---------------End of Column 2------------->
-                            </div>
-                            <!--------------Column 3-----------WS Results---------------->
-                            <div class="col-sm-2">
-                                <ul class="list-group">
-
-                                    <!---------------Order Calculation---------------100ml Hot---------->
-                                    <li class="list-group-item left-border-orange">
-                                        <span class="badge">Qty: 50 </span>
-                                        <h5><strong>100ml Hot </strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 500.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 6.25 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-orange">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>200ml Hot </strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 85.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 1.075 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-orange">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>500g Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 225.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 2.55 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-orange">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                     <li class="list-group-item left-border-orange">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-orange">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>1Kg Hot Vaccum</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 350.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 5.05 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <!---------------End of list--------------->
-                                </ul>
-                                <!---------------End of Column 3------------->
-                            </div>
-                            <!--------------Column 4-----------Curry Results---------------->
-                            <div class="col-sm-2">
-                                <ul class="list-group">
-
-                                    <!---------------Order Calculation---------------250ml Curry mix---------->
-                                    <li class="list-group-item left-border-yellow">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>750g Tub</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 290.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 4 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-yellow">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>750g Tub</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 290.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 4 Kg</strong>
-                                        </p>
-                                    </li>
-                                    <li class="list-group-item left-border-yellow">
-                                        <span class="badge">Qty: 5 </span>
-                                        <h5><strong>750g Tub</strong></h5>
-                                        <p style="margin-bottom:0px" class="text-success">
-                                            <span class="glyphicon glyphicon-shopping-cart glyphiconblack" aria-hidden="true"></span><strong> Price : R 290.00</strong>
-                                        </p>
-                                        <p style="margin-bottom:0px" class="text-warning">
-                                            <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : 4 Kg</strong>
-                                        </p>
-                                    </li>
-
-                                    <!---------------End of list--------------->
-                                </ul>
-                                <!---------------End of Column 4------------->
-                            </div>
-                            <!--------------Column 5-----------Master Results---------------->
-                            <div class="col-sm-4">
-
-  <div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-xs-2">
-                <br>
-                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-shopping-cart " aria-hidden="true"></span> </div>
-            <div class="col-sm-4">
-                <div id="div-content">
-                    <h4 style="margin-top: 21px;"><strong>Total Value</strong></h4>
-                    <p class="text-success" style="font-size:20px"><strong>R4,445.00</strong>
-                    </p>
-                </div>
-            </div>
-            <div class="col-xs-2">
-                <br>
-                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </div>
-            <div class="col-sm-4">
-                <div id="div-content">
-                    <h4 style="margin-top: 21px;"><strong>Shipping Weight</strong></h4>
-                    <p class="text-danger" style="font-size:20px"><strong>57.83 Kg</strong>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-2">
-                <br>
-                <div class="text-center">
-                    <span style="font-size:20px ; margin:0 auto;" class="glyphicon glyphicon-tasks " aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class="col-sm-10">
-                <h4 style="margin-top: 21px;" ><strong>Stock Required</strong></h4>
-                <div id="div-content">
-                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice</strong></h5>
-                    <p class="text-warning mainresult-small">49.42 Kg</p>
-                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice Hot</strong></h5>
-                    <p class="text-warning mainresult-small">0.00 Kg</p>
-                    <h5 style="margin-bottom: 0px;"><strong>Worcester Sauce Spice</strong></h5>
-                    <p class="text-warning mainresult-small">0.00 Kg</p>
-                    <h5 style="margin-bottom: 0px;"><strong>Curry Mix</strong></h5>
-                    <p class="text-warning mainresult-small">0.00 Kg</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-</div>
-                                <!---------------End of ROW-------------->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!--Footer-->
 
