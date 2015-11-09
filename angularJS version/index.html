@@ -161,11 +161,11 @@
                                     Change pricing &raquo;
                                 </button>
                                 <button ng-hide="orderContents" type="button" id="calculate" ng-click="calculate()" class="btn btn-success btn-block center-block" style="" name="submit">Calculate &raquo;</button>
-                                                        <button disabled style=" margin-top:4px;" type="button" class="btn btn-default btn-xs center-block"  ng-if="orderContents" ng-click="restart()">
+                                <button disabled style=" margin-top:4px;" type="button" class="btn btn-default btn-xs center-block" ng-if="orderContents" ng-click="restart()">
                                     Print / Save
                                 </button>
 
-                                <button style=" margin-top:4px;" type="button" class="btn btn-danger btn-xs center-block"  ng-if="orderContents" ng-click="restart()">
+                                <button style=" margin-top:4px;" type="button" class="btn btn-danger btn-xs center-block" ng-if="orderContents" ng-click="restart()">
                                     Restart
                                 </button>
                             </div>
@@ -177,7 +177,7 @@
                 </form>
             </div>
 
-</div>
+        </div>
 
     </section>
 
@@ -385,7 +385,7 @@
                                             <span class="glyphicon glyphicon-briefcase glyphiconblack" aria-hidden="true"></span><strong> Weight : {{total750gWsShip | number:2}} Kg</strong>
                                         </p>
                                     </li>
-                                     <li ng-if="total1kgVWsx" class="list-group-item left-border-orange">
+                                    <li ng-if="total1kgVWsx" class="list-group-item left-border-orange">
                                         <span class="badge">Qty: {{total1kgVWs}} </span>
                                         <h5><strong>1Kg WS Vaccum</strong></h5>
                                         <p style="margin-bottom:0px" class="text-success">
@@ -452,59 +452,59 @@
                             <!--------------Column 5-----------Master Results---------------->
                             <div class="col-sm-4">
 
-  <div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-xs-2">
-                <br>
-                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-shopping-cart " aria-hidden="true"></span> </div>
-            <div class="col-sm-4">
-                <div id="div-content">
-                    <h4 style="margin-top: 21px;"><strong>Total Value</strong></h4>
-                    <p class="text-success" style="font-size:19px"><strong>R {{orderValue | number:2}}</strong>
-                    </p>
-                </div>
-            </div>
-            <div class="col-xs-2">
-                <br>
-                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </div>
-            <div class="col-sm-4">
-                <div id="div-content">
-                    <h4 style="margin-top: 21px;"><strong>Weight</strong></h4>
-                    <p class="text-danger" style="font-size:19px"><strong>{{totalWeight | number:2}} Kg</strong>
-                    </p>
-                </div>
-            </div>
-        </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <br>
+                                                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-shopping-cart " aria-hidden="true"></span> </div>
+                                            <div class="col-sm-4">
+                                                <div id="div-content">
+                                                    <h4 style="margin-top: 21px;"><strong>Total Value</strong></h4>
+                                                    <p class="text-success" style="font-size:19px"><strong>R {{orderValue | number:2}}</strong>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <br>
+                                                <span style="font-size:45px ; margin:0 auto;" class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </div>
+                                            <div class="col-sm-4">
+                                                <div id="div-content">
+                                                    <h4 style="margin-top: 21px;"><strong>Weight</strong></h4>
+                                                    <p class="text-danger" style="font-size:19px"><strong>{{totalWeight | number:2}} Kg</strong>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
 
-        <div class="row">
-            <div class="col-xs-2">
-                <br>
-                <div class="text-center">
-                    <span style="font-size:20px ; margin:0 auto;" class="glyphicon glyphicon-tasks " aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class="col-sm-10">
-                <h4 style="margin-top: 21px;" ><strong>Stock Required</strong></h4>
-                <div id="div-content">
-                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice</strong></h5>
-                    <p class="text-warning mainresult-small">{{flsStock | number:2}} Kg</p>
-                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice Hot</strong></h5>
-                    <p class="text-warning mainresult-small">{{flsHStock | number:2}} Kg</p>
-                    <h5 style="margin-bottom: 0px;"><strong>Worcester Sauce Spice</strong></h5>
-                    <p class="text-warning mainresult-small">{{wsStock | number:2}} Kg</p>
-                    <h5 style="margin-bottom: 0px;"><strong>Curry Mix</strong></h5>
-                    <p class="text-warning mainresult-small">{{cmStock | number:2}} Kg</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <br>
+                                                <div class="text-center">
+                                                    <span style="font-size:20px ; margin:0 auto;" class="glyphicon glyphicon-tasks " aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h4 style="margin-top: 21px;"><strong>Stock Required</strong></h4>
+                                                <div id="div-content">
+                                                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice</strong></h5>
+                                                    <p class="text-warning mainresult-small">{{flsStock | number:2}} Kg</p>
+                                                    <h5 style="margin-bottom: 0px;"><strong>Flippen Lekka Spice Hot</strong></h5>
+                                                    <p class="text-warning mainresult-small">{{flsHStock | number:2}} Kg</p>
+                                                    <h5 style="margin-bottom: 0px;"><strong>Worcester Sauce Spice</strong></h5>
+                                                    <p class="text-warning mainresult-small">{{wsStock | number:2}} Kg</p>
+                                                    <h5 style="margin-bottom: 0px;"><strong>Curry Mix</strong></h5>
+                                                    <p class="text-warning mainresult-small">{{cmStock | number:2}} Kg</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
 
-</div>
+
+
+                                </div>
                                 <!---------------End of ROW-------------->
                             </div>
                         </div>
@@ -517,236 +517,236 @@
     <!-- Modal -->
 
     <div ng-controller="PriceCtrl" class="modal fade" id="pricingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Change product pricing</h4>
-                <hr/>
-                <label class="radio-inline">
-                    <input type="radio" checked ng-click="selectPrice()" name="inlineRadioOptions" id="agentPrice"> Standard Agent Price
-                </label>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Change product pricing</h4>
+                    <hr/>
+                    <label class="radio-inline">
+                        <input type="radio" checked ng-click="selectPrice()" name="inlineRadioOptions" id="agentPrice"> Standard Agent Price
+                    </label>
 
-                <label class="radio-inline">
-                    <input type="radio" ng-click="selectPrice()" name="inlineRadioOptions" id="sellingPrice"> Recommended Selling Price
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" ng-click="selectPrice()" name="inlineRadioOptions" id="retailPrice"> Recommended Retail Price
-                </label>
-            </div>
-            <div class="modal-body">
+                    <label class="radio-inline">
+                        <input type="radio" ng-click="selectPrice()" name="inlineRadioOptions" id="sellingPrice"> Recommended Selling Price
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" ng-click="selectPrice()" name="inlineRadioOptions" id="retailPrice"> Recommended Retail Price
+                    </label>
+                </div>
+                <div class="modal-body">
 
-                <div class="row">
-
-
+                    <div class="row">
 
 
-                    <!--Column 1-->
-                    <div class="col-sm-6">
-                        <h4 class="text-center"><span class="product-heading green-circle">Flippen Lekka Spice Original</span></h4>
 
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">100ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" id="_100mlPrice" name="100ml" disabled class="form-control" placeholder="{{defaultPricing.original._100ml}}">
-                                <div class="input-group-addon">.00</div>
+
+                        <!--Column 1-->
+                        <div class="col-sm-6">
+                            <h4 class="text-center"><span class="product-heading green-circle">Flippen Lekka Spice Original</span></h4>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">100ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" id="_100mlPrice" name="100ml" disabled class="form-control" placeholder="{{defaultPricing.original._100ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">200ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._200ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">500g:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._500g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">750g:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._750g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._1kgB}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Tub:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._1kgT}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--Column 2-->
+                        <div class="col-sm-6">
+                            <h4 class="text-center"><span class="product-heading red-circle">Flippen Lekka Spice Hot </span></h4>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">100ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._100ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">200ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._200ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">500g:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._500g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">750g:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._750g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._1kgB}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Tub:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._1kgT}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">200ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._200ml}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">500g:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._500g}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">750g:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._750g}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._1kgB}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Tub:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.original._1kgT}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-
                     </div>
-                    <!--Column 2-->
-                    <div class="col-sm-6">
-                        <h4 class="text-center"><span class="product-heading red-circle">Flippen Lekka Spice Hot </span></h4>
+
+                    <div class="row">
+
+                        <!--Column 3-->
+                        <div class="col-sm-6">
+                            <h4 class="text-center"><span class="product-heading orange-circle">Worcester Sauce spice</span></h4>
 
 
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">100ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._100ml}}">
-                                <div class="input-group-addon">.00</div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">100ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._100ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">200ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._200ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">500g:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._500g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">750g:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._750g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._1kgB}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Tub:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._1kgT}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">200ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._200ml}}">
-                                <div class="input-group-addon">.00</div>
+                        <!--Column 4-->
+                        <div class="col-sm-6">
+                            <h4 class="text-center"><span class="product-heading yellow-circle">Flippen Lekka Curry Mix</span></h4>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">250ml:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.cM._250ml}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">500g:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._500g}}">
-                                <div class="input-group-addon">.00</div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">500g Bag:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.cM._500g}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">750g:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._750g}}">
-                                <div class="input-group-addon">.00</div>
+                            <div class="form-group">
+                                <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
+                                <div class="col-sm-9 input-group">
+                                    <div class="input-group-addon">R</div>
+                                    <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.cM._1kgB}}">
+                                    <div class="input-group-addon">.00</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._1kgB}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Tub:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.hot._1kgT}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-
-                    <!--Column 3-->
-                    <div class="col-sm-6">
-                        <h4 class="text-center"><span class="product-heading orange-circle">Worcester Sauce spice</span></h4>
-
-
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">100ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._100ml}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">200ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._200ml}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">500g:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._500g}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">750g:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._750g}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._1kgB}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Tub:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.wS._1kgT}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Column 4-->
-                    <div class="col-sm-6">
-                        <h4 class="text-center"><span class="product-heading yellow-circle">Flippen Lekka Curry Mix</span></h4>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">250ml:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.cM._250ml}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">500g Bag:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.cM._500g}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 label-margin" for="100ml">1kg Bag:</label>
-                            <div class="col-sm-9 input-group">
-                                <div class="input-group-addon">R</div>
-                                <input type="number" name="100ml" class="form-control" disabled placeholder="{{defaultPricing.cM._1kgB}}">
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="modal-footer">
+                    <div class="alert alert-danger" role="alert">All vaules are changed in realtime, no need to save or apply manually.</div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="alert alert-danger" role="alert">All vaules are changed in realtime, no need to save or apply manually.</div>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-</div>
 
     <!--Footer-->
 

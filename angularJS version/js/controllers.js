@@ -244,7 +244,7 @@ orderCal.controller('CalculatorCtrl', function ($scope, $rootScope) {
             $rootScope.total100mlH |
             $rootScope.total200mlH |
             $rootScope.total500gH |
-            $rootScope.total750gH|
+            $rootScope.total750gH |
             $rootScope.total1kgVH |
             $rootScope.total1kgTH |
             $rootScope.total100mlWs |
@@ -452,7 +452,7 @@ orderCal.controller('CalculatorCtrl', function ($scope, $rootScope) {
         }
 
 
-                //WS
+        //WS
         if ($rootScope.total100mlWs) {
             $rootScope.total100mlWsShip = ($scope.total100mlWs * $rootScope.weight.ship.wS._100ml);
         }
